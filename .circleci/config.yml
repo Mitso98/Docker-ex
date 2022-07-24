@@ -7,10 +7,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run tests
+          name: install depndancies
           command: |
-            pwd
-            ls
+            cd ../
+            make install
+      - run:
+          name: lint code
+          command: |
+            cd ../
+            make lint
 
 
 workflows:
